@@ -256,7 +256,7 @@ input[type='submit']:hover {
 }
 
 /* ============================================
-   ABOUT PAGE STYLES (NEW LAYOUT)
+   ABOUT PAGE STYLES
    ============================================ */
 
 .about-overlay-new {
@@ -350,7 +350,6 @@ input[type='submit']:hover {
   display: block;
 }
 
-/* Old about styles - kept for backwards compatibility */
 .about-overlay {
   background-color: rgba(255, 255, 255, 0.95);
   min-height: 100vh;
