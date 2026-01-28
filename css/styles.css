@@ -1278,6 +1278,7 @@ body.resume-page {
   background: #fff;
   border: 3px solid var(--accent-color);
   border-radius: 50%;
+  margin-left: -1.3px;
   box-shadow: 0 2px 6px rgba(0, 144, 208, 0.3);
 }
 
@@ -1326,9 +1327,11 @@ body.resume-page {
   content: '▹';
   position: absolute;
   left: 0;
+  top: 0.15rem;
   color: var(--accent-color);
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  line-height: 1;
 }
 
 /* Education & Hobbies */
@@ -1343,6 +1346,7 @@ body.resume-page {
   border-left: none;
   padding-left: 0;
   gap: var(--spacing-xl);
+  align-items: baseline;
 }
 
 .resume_education .date {
