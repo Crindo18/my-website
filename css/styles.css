@@ -166,6 +166,15 @@ body.header-page {
   text-shadow: 0 0 10px rgba(0, 144, 208, 0.5);
 }
 
+.time-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #e8e8e8;
+  font-size: 16px;  
+  font-weight: 500;
+}
+
 /* ============================================
    HOME PAGE STYLES
    ============================================ */
@@ -1619,4 +1628,38 @@ body.resume-page {
     width: 120px;
     height: 120px;
   }
+}
+
+/* Clock Display Styles */
+.clock-container {
+  background-color: rgba(0, 144, 208, 0.15);
+  backdrop-filter: blur(10px);
+  width: 440px;
+  padding: 40px;
+  margin: 30px auto 0 auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 144, 208, 0.3);
+  border: 2px solid var(--accent-color);
+}
+
+.clock {
+  background-color: rgba(15, 15, 15, 0.8);
+  color: var(--accent-alt);
+  font-size: 3.5em;
+  font-weight: bold;
+  padding: 30px;
+  border-radius: 15px;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 4px;
+  text-shadow: 0 0 10px var(--accent-alt);
+  box-shadow: inset 0 0 20px rgba(0, 212, 255, 0.1);
+  border: 2px solid var(--accent-alt);
+}
+
+.clock-label {
+  color: var(--text-dim);
+  font-size: 1.1em;
+  margin-top: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
