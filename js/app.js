@@ -75,26 +75,26 @@ alert("Your message contains blocked spam keywords.");
 }
 });
 
-// let submitTimes = []; // stores timestamps of recent submissions
-// function isRateLimited() {
-// const now = Date.now();
-// // Keep only submissions from the last 60 seconds
-// submitTimes = submitTimes.filter(time => now - time < 60000);
-// // If already 3 submissions, block
-// if (submitTimes.length >= 3) {
-// return true;
-// }
-// // Otherwise, record this submission
-// submitTimes.push(now);
-// return false;
-// }
-// // Example usage inside submit event:
-// form.addEventListener("submit", (e) => {
-// if (isRateLimited()) {
-// e.preventDefault();
-// alert("Too many submissions. Please wait a minute.");
-// }
-// });
+let submitTimes = []; // stores timestamps of recent submissions
+function isRateLimited() {
+const now = Date.now();
+// Keep only submissions from the last 60 seconds
+submitTimes = submitTimes.filter(time => now - time < 60000);
+// If already 3 submissions, block
+if (submitTimes.length >= 3) {
+return true;
+}
+// Otherwise, record this submission
+submitTimes.push(now);
+return false;
+}
+// Example usage inside submit event:
+form.addEventListener("submit", (e) => {
+if (isRateLimited()) {
+e.preventDefault();
+alert("Too many submissions. Please wait a minute.");
+}
+});
 
 // Record when the form loads
 const formLoadTime = Date.now();
