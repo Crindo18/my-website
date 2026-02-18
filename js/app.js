@@ -5,6 +5,16 @@ function pad(n) {
   return n < 10 ? '0' + n : n;
 }
 
+const form = document.querySelector("form");
+const emailField = document.querySelector("input[name='email']");
+form.addEventListener("submit", function (e) {
+if (!emailField.value.includes("@")) {
+alert("Enter a valid email");
+e.preventDefault();
+return;
+}
+});
+
 function tick() {
   const now = new Date();
   const h = now.getHours(), m = now.getMinutes(), s = now.getSeconds();
@@ -26,62 +36,76 @@ function tick() {
 tick();
 setInterval(tick, 1000);
 
-const track = document.getElementById('track');
-const pips = document.querySelectorAll('.progress-pip');
-const btnPrev = document.getElementById('btn-prev');
-const btnNext = document.getElementById('btn-next');
-const CARD_WIDTH = 380 + 16; // card width + gap
+document.addEventListener("DOMContentLoaded", () => {
+    const track = document.getElementById("galleryTrack");
+    
+    // 1. Get all original cards
+    const originalCards = Array.from(track.children);
+    
+    // 2. Clone each card and append it to the track
+    // We do this to create a seamless loop. When the animation reaches 
+    // the end of the first set, it snaps back to the beginning instantly.
+    originalCards.forEach(card => {
+        const clone = card.cloneNode(true);
+        // Optional: Add a class to clones if you need specific styling
+        clone.classList.add('cloned-card');
+        track.appendChild(clone);
+    });
 
-// --- Drag to scroll ---
-let isDragging = false, startX = 0, scrollStart = 0;
-
-track.addEventListener('mousedown', e => {
-  isDragging = true;
-  startX = e.clientX;
-  scrollStart = track.scrollLeft;
-  track.classList.add('is-dragging');
+    // 3. Apply the Animation via JS to ensure it runs
+    // We used CSS animation 'scroll-left' defined in the stylesheet.
+    // The width of the track is now 200% of the content.
+    // We animate from 0% to -50% (which is the exact length of the original set).
+    
+    // Adjust speed: 40s is the duration. Higher = Slower.
+    track.style.animation = "scroll-left 20s linear infinite";
 });
 
-window.addEventListener('mousemove', e => {
-  if (!isDragging) return;
-  const dx = e.clientX - startX;
-  track.scrollLeft = scrollStart - dx;
+const spamWords = ["free money", "buy now", "click here",
+"subscribe", "promo"];
+function containsSpam(message) {
+const lowerMessage = message.toLowerCase();
+return spamWords.some(word => lowerMessage.includes(word));
+}
+form.addEventListener("submit", (e) => {
+const message = document.querySelector("#message").value;
+if (containsSpam(message)) {
+e.preventDefault();
+alert("Your message contains blocked spam keywords.");
+}
 });
 
-window.addEventListener('mouseup', () => {
-  isDragging = false;
-  track.classList.remove('is-dragging');
-});
+// let submitTimes = []; // stores timestamps of recent submissions
+// function isRateLimited() {
+// const now = Date.now();
+// // Keep only submissions from the last 60 seconds
+// submitTimes = submitTimes.filter(time => now - time < 60000);
+// // If already 3 submissions, block
+// if (submitTimes.length >= 3) {
+// return true;
+// }
+// // Otherwise, record this submission
+// submitTimes.push(now);
+// return false;
+// }
+// // Example usage inside submit event:
+// form.addEventListener("submit", (e) => {
+// if (isRateLimited()) {
+// e.preventDefault();
+// alert("Too many submissions. Please wait a minute.");
+// }
+// });
 
-// --- Touch support ---
-track.addEventListener('touchstart', e => {
-  startX = e.touches[0].clientX;
-  scrollStart = track.scrollLeft;
-}, { passive: true });
-
-track.addEventListener('touchmove', e => {
-  const dx = e.touches[0].clientX - startX;
-  track.scrollLeft = scrollStart - dx;
-}, { passive: true });
-
-// --- Arrow buttons ---
-btnNext.addEventListener('click', () => {
-  track.scrollBy({ left: CARD_WIDTH, behavior: 'smooth' });
-});
-
-btnPrev.addEventListener('click', () => {
-  track.scrollBy({ left: -CARD_WIDTH, behavior: 'smooth' });
-});
-
-// --- Progress pips ---
-track.addEventListener('scroll', () => {
-  const max = track.scrollWidth - track.clientWidth;
-  const ratio = track.scrollLeft / max;
-  const idx = Math.round(ratio * (pips.length - 1));
-  pips.forEach((p, i) => p.classList.toggle('active', i === idx));
-});
-
-// --- Prevent accidental link clicks after drag ---
-track.addEventListener('click', e => {
-  if (Math.abs(track.scrollLeft - scrollStart) > 5) e.preventDefault();
+// Record when the form loads
+const formLoadTime = Date.now();
+function isTooFast() {
+const submitTime = Date.now();
+const secondsTaken = (submitTime - formLoadTime) / 1000;
+return secondsTaken < 2;
+}
+form.addEventListener("submit", (e) => {
+if (isTooFast()) {
+e.preventDefault();
+alert("Submission was too fast. Please try again.");
+}
 });

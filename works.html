@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Works - Christian John Alado</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/works.css">
 </head>
 <body>
   <div class="portfolio-container">
@@ -22,130 +21,62 @@
         </nav>
       </div>
     </header>
-
     <main class="portfolio-content">
-      <div class="works-section">
+      <div class="works-overlay">
+    <h1>Featured Projects</h1>
+    
+  <div class="gallery-wrapper">
+  <div class="gallery-track" id="galleryTrack">
+    
+    <div class="card">
+      <div class="card-bg" style="background-image: url('img/elm.png');"></div>
+      <div class="card-title"><h3>ELM Prestige</h3></div>
+      <div class="card-overlay">
+        <div class="overlay-text">A high-end ecommerce platform...</div>
+      </div>
+    </div>
 
-        <div class="works-section-header">
-          <h1>Featured Projects</h1>
-          <div style="display:flex; align-items:center; gap:20px;">
-            <div class="carousel-hint">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3"/><polyline points="10 17 15 12 10 7"/></svg>
-              Drag to explore
-            </div>
-            <div class="carousel-nav">
-              <button id="btn-prev" aria-label="Previous">&#8592;</button>
-              <button id="btn-next" aria-label="Next">&#8594;</button>
-            </div>
-          </div>
-        </div>
+    <div class="card">
+      <div class="card-bg" style="background-image: url('img/placeholder.jpg');"></div>
+      <div class="card-title"><h3>Payroll Sys</h3></div>
+      <div class="card-overlay">
+        <div class="overlay-text">Comprehensive web application...</div>
+      </div>
+    </div>
 
-        <div class="carousel-viewport">
-          <div class="carousel-track" id="track">
+    <div class="card">
+      <div class="card-bg" style="background-image: url('img/placeholder.jpg');"></div>
+      <div class="card-title"><h3>Bredbot</h3></div>
+      <div class="card-overlay">
+        <div class="overlay-text">Autonomous robot powered by PIC16F877A...</div>
+      </div>
+    </div>
 
-            <!-- Card 1 -->
-            <div class="project-card">
-              <div class="project-card-accent"></div>
-              <div class="project-card-bg" style="background-image: url('img/elm.png');"></div>
-              <div class="project-card-gradient"></div>
-              <div class="project-card-content">
-                <span class="project-tag">E-Commerce</span>
-                <h2 class="project-card-title">ELM Prestige</h2>
-                <p class="project-card-desc">A high-end ecommerce platform for luxury goods featuring real-time inventory management and a custom shopping cart.</p>
-                <span class="project-card-cta">
-                  View Project
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </span>
-              </div>
-            </div>
+    <div class="card">
+      <div class="card-bg" style="background-image: url('img/plantita.png');"></div>
+      <div class="card-title"><h3>Plantita-fi</h3></div>
+      <div class="card-overlay">
+        <div class="overlay-text">Smart urban farming solution...</div>
+      </div>
+    </div>
 
-            <!-- Card 2 -->
-            <div class="project-card">
-              <div class="project-card-accent"></div>
-              <div class="project-card-bg" style="background-image: url('img/placeholder.jpg');"></div>
-              <div class="project-card-gradient"></div>
-              <div class="project-card-content">
-                <span class="project-tag">Web App</span>
-                <h2 class="project-card-title">Payroll System</h2>
-                <p class="project-card-desc">Comprehensive web application for automating salary computations, tracking employee attendance, and generating payslips.</p>
-                <span class="project-card-cta">
-                  View Project
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </span>
-              </div>
-            </div>
+    <div class="card">
+      <div class="card-bg" style="background-image: url('img/advisync.png');"></div>
+      <div class="card-title"><h3>Advising Sys</h3></div>
+      <div class="card-overlay">
+        <div class="overlay-text">Student support platform...</div>
+      </div>
+    </div>
 
-            <!-- Card 3 -->
-            <div class="project-card">
-              <div class="project-card-accent"></div>
-              <div class="project-card-bg" style="background-image: url('img/placeholder.jpg');"></div>
-              <div class="project-card-gradient"></div>
-              <div class="project-card-content">
-                <span class="project-tag">Embedded Systems</span>
-                <h2 class="project-card-title">Bredbot</h2>
-                <p class="project-card-desc">Autonomous robot powered by PIC16F877A. Programmed in Assembly to process sensor data and navigate complex tracks.</p>
-                <span class="project-card-cta">
-                  View Project
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </span>
-              </div>
-            </div>
+    <div class="card empty">
+      <h3>COMING SOON</h3>
+    </div>
+    </div>
+</div>
 
-            <!-- Card 4 -->
-            <div class="project-card">
-              <div class="project-card-accent"></div>
-              <div class="project-card-bg" style="background-image: url('img/plantita.png');"></div>
-              <div class="project-card-gradient"></div>
-              <div class="project-card-content">
-                <span class="project-tag">IoT / Hardware</span>
-                <h2 class="project-card-title">Plantita-fi</h2>
-                <p class="project-card-desc">Smart urban farming solution that automatically monitors water pH levels and regulates nutrient delivery systems.</p>
-                <span class="project-card-cta">
-                  View Project
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </span>
-              </div>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="project-card">
-              <div class="project-card-accent"></div>
-              <div class="project-card-bg" style="background-image: url('img/advisync.png');"></div>
-              <div class="project-card-gradient"></div>
-              <div class="project-card-content">
-                <span class="project-tag">Academic Platform</span>
-                <h2 class="project-card-title">Advising Sys</h2>
-                <p class="project-card-desc">Student support platform for tracking academic progress, analyzing curriculum data, and recommending course loads.</p>
-                <span class="project-card-cta">
-                  View Project
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </span>
-              </div>
-            </div>
-
-            <!-- Coming soon -->
-            <div class="project-card coming-soon">
-              <span class="coming-soon-icon">+</span>
-              <span class="coming-soon-text">Coming Soon</span>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Progress pips -->
-        <div class="carousel-progress" id="progress">
-          <div class="progress-pip active"></div>
-          <div class="progress-pip"></div>
-          <div class="progress-pip"></div>
-          <div class="progress-pip"></div>
-          <div class="progress-pip"></div>
-          <div class="progress-pip"></div>
-        </div>
-
+<script src="js/app.js"></script>
       </div>
     </main>
   </div>
-
-  <script src="js/works.js"></script>
 </body>
 </html>

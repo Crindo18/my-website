@@ -20,8 +20,6 @@
 
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#fafafa">
-
-  <link rel="stylesheet" href="css/clock.css">
 </head>
 
 <body class="home-page">
@@ -51,8 +49,6 @@
               Computer Engineering Student at DLSU. <br>
               Passionate about hardware, software, and design.
             </p>
-
-            <!-- Professional Status Clock -->
             <div class="status-clock">
               <div class="status-clock-bar">
                 <span class="status-dot"></span>
@@ -76,44 +72,21 @@
         </div>
         <div class="contact-section">
           <h2>Get in Touch</h2>
-          <form action="#" method="post">
-            <input type="text" name="name" placeholder="YOUR NAME">
-            <input type="email" name="email" placeholder="YOUR EMAIL">
-            <textarea name="message" rows="5" placeholder="TELL ME ABOUT YOUR PROJECT"></textarea>
+          <form action="https://formsubmit.co/chrisjohnalado@gmail.com"  method="post">
+            <input type="hidden" name="_subject" value="New Message from Portfolio">
+            <input type="hidden" name="_captcha" value="false">
+
+            <input type="text" name="name" placeholder="YOUR NAME" required>
+            <input type="email" name="email" placeholder="YOUR EMAIL" required>
+
+            <textarea id="message" name="message" rows="5" placeholder="TELL ME ABOUT YOUR PROJECT" required></textarea>
             <input type="submit" value="Submit">
           </form>
         </div>
       </div>
     </main>
   </div>
-
-  <script>
-    const DAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-    const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-
-    function pad(n){ return n < 10 ? '0'+n : n; }
-
-    function tick() {
-      const now = new Date();
-      const h = now.getHours(), m = now.getMinutes(), s = now.getSeconds();
-
-      document.getElementById('clock-h').textContent = pad(h);
-      document.getElementById('clock-m').textContent = pad(m);
-      document.getElementById('clock-s').textContent = pad(s);
-
-      let greeting = h >= 5 && h < 12 ? 'Good Morning'
-                   : h >= 12 && h < 17 ? 'Good Afternoon'
-                   : h >= 17 && h < 21 ? 'Good Evening'
-                   : 'Good Night';
-      document.getElementById('greeting').textContent = greeting;
-
-      document.getElementById('clock-date').textContent =
-        DAYS[now.getDay()] + ', ' + MONTHS[now.getMonth()] + ' ' + now.getDate();
-    }
-
-    tick();
-    setInterval(tick, 1000);
-  </script>
+  <script src="js/app.js" defer></script>
 
 </body>
 
